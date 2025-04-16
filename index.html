@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AT Stride - Robotics Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="AT Stride Logo" style="height: 40px; vertical-align: middle;">
+    </div>
+    <nav class="nav" style="padding-right: 40px;">
+      <ul class="nav-links">
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#services">services</a></li>
+        <li><a href="#cases">case studies</a></li>
+        <li><a href="#contact-sales">contact sales</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>simple solutions to complex problems</h1>
+      <p>Upgrade your workplace with Cobots, Automation and OEM Solutions.</p>
+      <a href="#services" class="btn">explore solutions</a>
+    </div>
+  </section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <h2>about us</h2>
+  <p>AT Stride specialise in automation, cobots and robots, and smart manufacturing solutions that drive business efficiency and bring results to your bottom line.</p>
+<p>Our founders bring over two decades of local and international experience across automation, technology and business optimisation.</p>
+</div>
+  <div class="supplier">
+    <span>Our preferred supplier is</span>
+    <img src="omronlogo.png" alt="Omron Logo">
+  </div><br>
+  <!-- YouTube Video Embed -->
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/ka6G4Xmr_Fo?si=yWd5lkVphUJjma-2" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+  <h2>services</h2>
+  <div class="service-cards">
+    <div class="card">
+      <h3>Cobots</h3>
+      <p>Direct human-robot interaction within a shared workspace, tackling repeatable, monotonous, or physically demanding tasks</p>
+    </div>
+    <div class="card">
+      <h3>Industrial Automation</h3>
+      <p>Control and automate industrial processes, reduce human intervention, improve product, productivity and safety</p>
+    </div>
+    <div class="card">
+      <h3>Smart Manufacturing</h3>
+      <p>Technology solutions that connect, monitor, optimise and scale efficiency from design through production and beyond</p>
+    </div>
+  </div><br>
+  <p>If a task is the same every time, automate it</p>
+  <a href="#contact-sales" class="btn">find out how</a>
+</section>
+
+<!-- ROI Summary Section -->
+<section class="roi-summary">
+  <h2>roi calculator</h2>
+  <h3 class="roi-subheading">How long until your automation pays for itself?</h3>
+  <table class="roi-table">
+    <tr>
+      <th>your operator(s) annual wage</th>
+      <td>
+        <div class="input-dollar">
+          <span class="dollar-sign">$</span>
+          <input 
+            type="text" 
+            id="annualSalary" 
+            min="50000" 
+            max="500000" 
+            step="5000" 
+            placeholder="amount"
+          >
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Cobot set up cost</th>
+      <td>
+        $120,000<br>
+        <small>illustrative only, costs will vary by job</small>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;">
+        <button id="calculateButton" class="btn-calc">calculate</button>
+      </td>
+    </tr>
+    <tr>
+      <th>Return on investment time</th>
+      <td>
+        <span id="roiDays"></span> days
+      </td>
+    </tr>
+  </table><br>
+  <a href="#contact-sales" class="btn">
+    contact us for a detailed ROI calculation
+  </a>
+</section>
+
+
+  <!-- Case Studies Section -->
+  <section id="cases" class="case-studies">
+    <h2>case studies</h2>
+    <div class="case-slider">
+      <div class="case">Coming soon...</div>
+    </div>
+  </section>
+
+  <!-- Contact Sales Section -->
+  <section id="contact-sales" class="contact-sales">
+    <h2>contact sales</h2>
+    <p>Interested in our automation solutions? Get in touch to discuss your needs.</p>
+    <form action="mailto:hello@atstride.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="your name" required>
+      <input type="email" name="email" placeholder="your email" required>
+      <input type="text" name="company" placeholder="your company" required>
+      <textarea name="message" placeholder="tell us about your automation needs..." required></textarea>
+      <button type="submit" class="btn">get in touch</button>
+    </form>
+  </section>
+
+<!-- Footer -->
+<footer>
+  <img src="logob.png" alt="Small Logo" class="footer-logo">
+  <p>&copy; 2025 AT Stride. All Rights Reserved.</p>
+</footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
