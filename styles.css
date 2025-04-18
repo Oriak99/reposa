@@ -1,4 +1,4 @@
-79% of storage used … If you run out of space, you can't save to Drive or use Gmail. Get 100 GB of storage for $3.49 $0.87 for 1 month.
+/* styles.css */
 /* Reset & Global Styles */
 * {
   margin: 0;
@@ -19,14 +19,11 @@ header {
   padding: 20px 40px;
   background: #fff;
   color: #333;
-  position: fixed;  /* Fixed at the top */
-  top: 0;           /* Start at the top */
-  left: 0;
-  width: 100%;      /* Full width */
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
-  /* You can remove the transition if it's not needed anymore */
 }
-
 .logo img {
   height: 40px;
 }
@@ -59,7 +56,7 @@ header {
 .hamburger span {
   height: 3px;
   width: 25px;
-  background: #fff;
+  background: #333;
   margin: 4px 0;
   transition: 0.4s;
 }
@@ -87,6 +84,12 @@ header {
   color: #000;
   text-decoration: none;
   margin-top: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #5ac5d5;
 }
 
 /* About Section */
@@ -105,14 +108,11 @@ header {
   padding: 60px 40px;
   background: #333;
   text-align: center;
+  color: #fff;
 }
 .services h2 {
   text-transform: lowercase;
   margin-bottom: 20px;
-  color: #fff; /* sets the header text to white */
-}
-.services  {
-  color: #fff; /* sets the header text to white */
 }
 .service-cards {
   display: flex;
@@ -130,7 +130,7 @@ header {
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  background-color: #6BD3E0; /* change this value to your desired hover color */
+  background-color: #6BD3E0;
 }
 .card h3 {
   text-transform: lowercase;
@@ -142,10 +142,6 @@ header {
   font-size: 14px;
   color: #333;
 }
-.services-info {
-  margin-top: 40px; /* Adjust the value as needed for desired spacing */
-  color: #fff;      /* white text */
-}
 
 /* Case Studies Section */
 .case-studies {
@@ -154,7 +150,6 @@ header {
   padding: 60px 40px;
   text-align: center;
 }
-
 .case-studies h2 {
   text-transform: lowercase;
   margin-bottom: 20px;
@@ -166,13 +161,10 @@ header {
   background: #333;
   text-align: center;
 }
-.contact-sales h2 {
-  text-transform: lowercase;
-  margin-bottom: 20px;
-  color: #fff; /* sets the header text to white */
-}
+.contact-sales h2,
 .contact-sales p {
   color: #fff;
+  text-transform: lowercase;
 }
 .contact-sales form {
   max-width: 600px;
@@ -203,18 +195,20 @@ footer {
   padding: 20px;
 }
 .footer-logo {
-  height: 40px; /* Adjust this value to change the logo size */
-  margin-bottom: 10px; /* Optional: adds some space between the logo and text */
+  height: 40px;
+  margin-bottom: 10px;
 }
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
   .nav-links {
     position: absolute;
     right: 0;
-    height: 100vh;
     top: 0;
+    height: 100vh;
     background: #333;
     flex-direction: column;
     align-items: center;
@@ -225,145 +219,24 @@ footer {
   .nav-links.active {
     transform: translateX(0);
   }
-  .hamburger {
-    display: flex;
+  /* make links readable on dark bg */
+  .nav-links li a {
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0;
   }
-}
-
-.supplier {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.supplier span {
-  margin-right: 10px;
-  font-size: 16px;
-  color: #000;
-}
-
-.supplier img {
-  height: 20px;  /* Adjust the height to make the logo smaller */
-}
-
-.video-container {
-  width: 80%;           /* Container uses 80% of the parent width */
-  margin: 0 auto;       /* Center the container */
-  position: relative;
-  padding-bottom: 56.25%; /* Maintains a 16:9 aspect ratio (9/16 * 100 = 56.25%) */
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.roi-summary {
-  padding: 40px;
-  background-color: #f9f9f9;
-  text-align: center;
-  margin-top: 0px;
-}
-
-.roi-summary h2 {
-  text-transform: lowercase;
-  margin-bottom: 10px;
-}
-
-.roi-subheading {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Table styling */
-.roi-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-  width: 80%;
-  max-width: 600px;
-  background-color: #fff;
-}
-
-.roi-table th,
-.roi-table td {
-  text-align: left;
-  padding: 8px 10px; /* Reduced padding for closer columns */
-  border-bottom: none; /* Removed grey divider lines */
-}
-
-.roi-table th {
-  font-weight: bold;
-  text-transform: lowercase;
-}
-
-/* Style the input box with a fixed dollar symbol */
-.input-dollar {
-  position: relative;
-}
-
-.input-dollar .dollar-sign {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000;
-  pointer-events: none;
-}
-
-.input-dollar input {
-  background-color: #d3d3d3;
-  color: #000;
-  border: none;
-  padding: 6px 6px 6px 25px; /* extra left padding for the dollar sign */
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px; /* Matching the fixed cost text size */
-}
-
-/* Ensure the <small> text appears under the number */
-.roi-table td small {
-  display: block;
-  font-size: 0.85em;
-  color: #666;
-  margin-top: 4px;
-}
-
-/* Style the calculate button */
-.btn-calc {
-  background: #d3d3d3;  /* default grey background */
-  border: none;
-  color: #000;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
-  transition: background-color 0.3s; /* smooth transition */
-}
-
-.btn-calc:hover {
-  background: #c0c0c0;  /* darker grey on hover */
-}
-
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #6BD3E0;
-  color: #000;
-  text-decoration: none;
-  margin-top: 20px;
-  border-radius: 4px;           /* Optional: rounds the corners */
-  font-size: 16px;              /* Adjust to change the text size */
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #5ac5d5;    /* A slightly darker shade on hover */
+  /* mobile-only close button */
+  .close-menu {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .close-menu a {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+  }
 }
