@@ -60,4 +60,72 @@
     display: flex;
     color: #333;
   }
+
+  /* Mobile Nav Menu (Slide-In from Right) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    background: #333;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+    padding-top: 40px;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links li a {
+    color: #fff !important;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .hamburger {
+    display: flex;
+    font-size: 30px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  /* Overlay that appears behind menu */
+  #menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  #menu-overlay.active {
+    display: block;
+  }
+
+  /* Close Button inside menu */
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
 }
