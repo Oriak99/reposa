@@ -1,4 +1,5 @@
 /* styles.css */
+
 /* Reset & Global Styles */
 * {
   margin: 0;
@@ -9,6 +10,11 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
+}
+
+/* Hide the mobile close button on desktop */
+.close-menu {
+  display: none;
 }
 
 /* Header */
@@ -102,6 +108,38 @@ header {
   text-transform: lowercase;
   margin-bottom: 20px;
 }
+.supplier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.supplier span {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #000;
+}
+.supplier img {
+  height: 20px;
+}
+
+/* Video Container */
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* Services Section */
 .services {
@@ -125,7 +163,9 @@ header {
   margin: 10px;
   flex: 1 1 250px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              background-color 0.3s ease;
 }
 .card:hover {
   transform: scale(1.05);
@@ -201,33 +241,30 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  /* Show hamburger */
   .hamburger {
     display: flex;
   }
+  /* Slide-in menu */
   .nav-links {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     height: 100vh;
     background: #333;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 75%;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in-out;
+    padding-top: 60px; /* push links below header */
   }
   .nav-links.active {
     transform: translateX(0);
   }
-  /* make links readable on dark bg */
-  .nav-links li a {
-    color: #fff;
-    font-size: 18px;
-    margin: 20px 0;
-  }
-  /* mobile-only close button */
+  /* Show the close button only on mobile */
   .close-menu {
-    list-style: none;
+    display: block;
     width: 100%;
     text-align: right;
     padding: 20px;
@@ -237,6 +274,11 @@ footer {
     font-size: 30px;
     color: #fff;
     text-decoration: none;
-    display: inline-block;
+  }
+  /* Mobile nav link styling */
+  .nav-links li a {
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0;
   }
 }
