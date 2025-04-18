@@ -1,29 +1,46 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const hamburger = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('mobile-menu');
-  const closeBtn = document.getElementById('close-menu');
-  const overlay = document.getElementById('menu-overlay');
+79% of storage used … If you run out of space, you can't save to Drive or use Gmail. Get 100 GB of storage for $3.49 $0.87 for 1 month.
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  
+  // Toggle hamburger menu
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+  });
+});
 
-  if (hamburger && navLinks && closeBtn && overlay) {
-    function openMenu() {
-      navLinks.classList.add('active');
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // prevent background scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const annualSalaryInput = document.getElementById('annualSalary');
+  const roiDaysSpan = document.getElementById('roiDays');
+  const calculateButton = document.getElementById('calculateButton');
+
+  // Function to format the input with commas as the user types (if needed)
+  function formatNumberInput(e) {
+    let input = e.target;
+    // Remove any non-digit characters
+    let value = input.value.replace(/[^\d]/g, '');
+    if (value === "") {
+      input.value = "";
+      return;
     }
-
-    function closeMenu() {
-      navLinks.classList.remove('active');
-      overlay.classList.remove('active');
-      document.body.style.overflow = ''; // re-enable scroll
-    }
-
-    hamburger.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-
-    // Close when a nav link is clicked
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
+    let number = parseInt(value, 10);
+    input.value = number.toLocaleString('en-US');
   }
+  annualSalaryInput.addEventListener('input', formatNumberInput);
+
+  function calculateROI() {
+    // Remove commas from the input value
+    const rawValue = annualSalaryInput.value.replace(/,/g, "");
+    const salary = parseFloat(rawValue);
+    
+    if (!isNaN(salary) && salary >= 50000 && salary <= 500000) {
+      const dailyCost = salary / 365; // Based on 365 days per year
+      const paybackDays = 120000 / dailyCost;
+      roiDaysSpan.textContent = Math.round(paybackDays);
+    } else {
+      roiDaysSpan.textContent = '';
+    }
+  }
+
+  calculateButton.addEventListener('click', calculateROI);
 });
