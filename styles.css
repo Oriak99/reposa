@@ -1,4 +1,4 @@
-/* Existing .hamburger styles (tweak for visibility on white bg) */
+/* Hamburger Icon */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -6,15 +6,16 @@
   background: none;
   border: none;
   font-size: 32px;
-  color: #333; /* visible on light background */
+  color: #333;
+  z-index: 1002;
 }
 
-/* Optional: style change when menu is open */
+/* Optional active style */
 .hamburger.active {
   color: #6BD3E0;
 }
 
-/* Fix nav-links visibility in mobile menu */
+/* Default nav links (desktop) */
 .nav-links {
   list-style: none;
   display: flex;
@@ -22,47 +23,18 @@
 }
 
 .nav-links li a {
-  color: #333; /* default for desktop */
+  color: #333;
   text-decoration: none;
   text-transform: lowercase;
   font-size: 16px;
 }
 
-/* Mobile styles */
+/* Mobile Navigation */
 @media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px; /* below the fixed header */
-    right: 0;
-    height: 100vh;
-    background: #333;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    transform: translateX(100%);
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  .nav-links li {
-    margin: 20px 0;
-  }
-
-  .nav-links li a {
-    color: #fff; /* contrast for dark background */
-    font-size: 18px;
-  }
-
   .hamburger {
     display: flex;
-    color: #333;
   }
 
-  /* Mobile Nav Menu (Slide-In from Right) */
-@media (max-width: 768px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -93,17 +65,7 @@
     text-decoration: none;
   }
 
-  .hamburger {
-    display: flex;
-    font-size: 30px;
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1002;
-  }
-
-  /* Overlay that appears behind menu */
+  /* Overlay behind the menu */
   #menu-overlay {
     display: none;
     position: fixed;
